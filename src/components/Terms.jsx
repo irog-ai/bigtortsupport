@@ -4,7 +4,7 @@ import { Box } from "@mui/material";
 
 export default function Terms() {
     useEffect(() => {
-        document.title = 'Terms & Conditions — irog.ai';
+        document.title = 'Terms & Conditions — bigtortsupport.ai';
     }, []);
 
     const styles = {
