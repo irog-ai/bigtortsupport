@@ -17,13 +17,12 @@ const Home = () => {
       component="main"
       sx={{
         flexGrow: 1,
-        width: '100vw',
+        width: '100%',
         backgroundSize: "cover",
         backgroundPosition: "center",
         minHeight: "100vh",
         padding: 0,
-        margin: 0,
-        
+        margin: 0,        
       }}
     >
       <Box
@@ -40,44 +39,32 @@ const Home = () => {
           alignItems: 'center',
           mt: 0,
           position: 'relative',
-          zIndex: 1
+          zIndex: 1,
+          
         }}
       >
         <Grid container justifyContent="center">
-        
+        <Grid size={1}></Grid>
           <Grid size={5}>
             <Typography
               variant="h2"
               gutterBottom
               sx={{
                 color: "#000",
-                fontWeight: 700,
+                fontWeight: 780,
                 textAlign: "left",
                 //letterSpacing: "0.1em",
                 textShadow: "2px 2px 4px rgba(255,255,255,0.5)",
                 marginBottom: "1rem",
-                fontFamily: "'Roboto', sans-serif"
+                fontFamily: "'Roboto', sans-serif",
+                lineHeight:1,
               }}
             >
               Helping Law Firms With Mass Tort
             </Typography>
           </Grid>
-          <Grid size={7}>
-          <Button
-              variant="contained"
-              color="primary"
-              onClick={() => navigate("/Login")} // Redirect to a new route
-              sx={{ 
-                display: 'block', 
-                mx: 'auto', 
-                backgroundColor: 'rgb(42, 66, 63)', 
-                width: '150px', // Increased width to fit text
-                marginTop: '100px',
-                whiteSpace: 'nowrap' // Prevents text from wrapping
-              }}
-            >
-              GET STARTED
-            </Button>
+          <Grid size={6}>
+          
           </Grid>
         </Grid>
       </Box>
@@ -148,3 +135,23 @@ const Home = () => {
 };
 
 export default Home;
+
+
+
+/*
+<Button
+              variant="contained"
+              color="primary"
+              onClick={() => navigate("/Login")} // Redirect to a new route
+              sx={{ 
+                display: 'block', 
+                mx: 'auto', 
+                backgroundColor: 'rgb(42, 66, 63)', 
+                width: '150px', // Increased width to fit text
+                marginTop: '100px',
+                whiteSpace: 'nowrap' // Prevents text from wrapping
+              }}
+            >
+              GET STARTED
+            </Button>
+*/

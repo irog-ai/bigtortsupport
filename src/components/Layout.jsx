@@ -5,9 +5,9 @@ import { Box } from "@mui/material";
 
 const Layout = () => {
   return (
-    <Box sx={{ width: '100%' }}>
+    <Box component="main" >
       <Banner />
-      <Box>
+      <Box >      
         <Outlet />
       </Box>
     </Box>
@@ -15,3 +15,4 @@ const Layout = () => {
 };
 
 export default Layout;
+

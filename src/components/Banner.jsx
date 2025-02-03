@@ -1,16 +1,28 @@
+
 import React from 'react';
-import '../styles/Banner.css'; // Import a CSS file for styling
-import logo from '../assets/bigtortsupportlogo.png'; // Adjust the import according to your actual file type
-import { AppBar } from '@mui/material';
+import { AppBar, Toolbar, Box } from '@mui/material';
+import logo from '../assets/bigtortsupportlogo.png'; // Update this path according to your project
 
 const Banner = () => {
-    return (
-      <AppBar position="static" /* instead of "fixed" */ >
-        <div className="banner">
-          <img src={logo} alt="Logo" className="banner-logo" />
-        </div>
-      </AppBar>
-    );
-  };
+  
+  return (
+    <AppBar position="static" sx={{ backgroundColor: 'rgb(42, 66, 63)', height: '100px', width: '100%' }}>
+      <Toolbar disableGutters sx={{ display: 'flex', justifyContent: 'center' }}>
+        <Box
+          component="img"
+          src={logo}
+          alt="Logo"
+          sx={{
+            maxHeight: '60px', 
+            maxWidth: '100%', 
+            margin: '0 auto',
+            objectFit: 'contain', // Ensure the logo fits the available space
+            marginTop: '20px'            
+          }}
+        />
+      </Toolbar>
+    </AppBar>
+  );
+};
 
 export default Banner;
