@@ -633,7 +633,7 @@ h1, h2, h3, h4, h5, h6, .header-text {
 #hero--text {
 	align-self: center;
 	color: var(--black);
-	max-width: 407px;
+	max-width: 600px;
 	width: 100%;
 }
 #hero--text--header

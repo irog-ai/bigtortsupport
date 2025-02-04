@@ -28,7 +28,7 @@ const Home = () => {
         <div id="hero--background"></div>
         <div id="hero--inner-container" className="max-1040">
           <div id="hero--text">
-            <h1 id="hero--text--header">Helping Law Firms With Mass Tort</h1>
+            <h1 id="hero--text--header">AI Driven Solutions for Mass Tort Litigation</h1>
             <p id="hero-cta"><a><span>Get started</span></a></p>
           </div>
         </div>
