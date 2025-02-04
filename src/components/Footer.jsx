@@ -1,78 +1,43 @@
-import React from "react";
-import { Box, Typography } from "@mui/material";
-import { useNavigate } from "react-router-dom"; // Import useNavigate
+import React from 'react';
+import '../styles/main.css';
+import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
-  const navigate = useNavigate(); // Initialize useNavigate
+  const navigate = useNavigate(); 
 
-  // Function to navigate to terms page
-  const goToTermsPage = () => {
-    navigate("/Terms");
+  const closeMenu = () => {
+    document.querySelector('body').classList.remove('mobile-menu-open')
+  }
+  
+  const handleButtonClick = (event, route) => {
+    navigate(route);
+    closeMenu();
+    if(event!=null)event.preventDefault();
   };
 
   return (
-    <Box
-      component="footer"
-      sx={{
-        width: "100%",
-        backgroundColor: "#f7f7f7",
-        borderTop: "1px solid #ddd",
-        mt: "auto",
-      }}
-    >
-      <Box
-        sx={{
-          padding: "20px",
-          textAlign: "center",
-          backgroundColor: "#e0e0e0",
-        }}
-      >
-        <Typography variant="body1" sx={{ fontWeight: "bold" }}>
-          Have questions or need help? Visit the BigTort Help Center
-        </Typography>
-      </Box>
-      <Box
-        sx={{
-          padding: "10px 20px",
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          flexWrap: "wrap",
-          maxWidth: "100%",
-          overflow: "hidden",
-        }}
-      >
-        <Typography variant="body2" sx={{ textAlign: "left", maxWidth: "60%" }}>
-          We know that keeping your data secure and safe is important. Learn
-          more about our{" "}
-          <span
-            onClick={() => navigate("/PrivacyPolicy")}
-            style={{
-              color: "blue",
-              textDecoration: "underline",
-              cursor: "pointer",
-            }}
-          >
-            privacy policy
-          </span>{" "}
-          and our{" "}
-          <span
-            onClick={goToTermsPage}
-            style={{
-              color: "blue",
-              textDecoration: "underline",
-              cursor: "pointer",
-            }} // Inline styling to indicate a link
-          >
-            security policy
-          </span>
-          .
-        </Typography>
-        <Typography variant="body2" sx={{ textAlign: "right" }}>
-          &copy; CG Legal Tech 2025
-        </Typography>
-      </Box>
-    </Box>
+    <>
+      <footer id="page-footer">
+        <div id="page-footer--inner-container" className="page-content-container">
+          <nav id="footer-nav">
+            <ul>
+              {/*
+              <li>
+                <a href="/contactus" onClick={(e) => handleButtonClick(e, "/contactus")}>Contact Us</a>
+              </li>
+              */}
+              <li>
+                <a href="/privacypolicy" onClick={(e) => handleButtonClick(e, "/privacypolicy")}>Privacy Policy</a>
+              </li>
+              <li>
+                <a href="/terms" onClick={(e) => handleButtonClick(e, "/terms")}>Terms & Conditions</a>
+              </li>
+            </ul>
+          </nav>
+          <div id="footer-copyright">&copy; 2025 CG Legal Technologies, LLC</div>
+        </div>
+      </footer>
+    </>
   );
 };
 

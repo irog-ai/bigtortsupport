@@ -8,6 +8,7 @@ import Footer from "./components/Footer";
 import Terms from "./components/Terms";
 import PrivacyPolicy from "./components/PrivacyPolicy";
 
+
 function App() {
   return (
     <div className="App" style={{ minWidth: '98.7vw', overflowX: 'hidden' }}>
