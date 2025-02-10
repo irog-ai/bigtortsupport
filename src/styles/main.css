@@ -608,7 +608,7 @@ h1, h2, h3, h4, h5, h6, .header-text {
 	/* margin: calc(0px - var(--header-height)) 0 0 0; */
 }
 #hero--background {
-	background-image: url('../Assets/hero_bg.jpg');
+	background-image: url('/src/assets/hero_bg.jpg');
 	background-size: cover;
 	background-position: center;
 	position: absolute;
@@ -633,7 +633,7 @@ h1, h2, h3, h4, h5, h6, .header-text {
 #hero--text {
 	align-self: center;
 	color: var(--black);
-	max-width: 407px;
+	max-width: 600px;
 	width: 100%;
 }
 #hero--text--header
@@ -732,7 +732,7 @@ h1, h2, h3, h4, h5, h6, .header-text {
 	padding-left: 16px;
 }
 #fp--intro--phone-icon {
-	background-image: url('../Assets/phone.png');
+	background-image: url('/src/assets/phone.png');
 	background-size: contain;
 	background-position: center;
 	background-repeat: no-repeat;
