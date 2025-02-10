@@ -1,7 +1,10 @@
 import React, { useEffect } from "react";
 
+
 const Terms = () => {
+  
   useEffect(() => {
+    document.title = "Terms - Bigtortsupport.ai";
     window.scrollTo(0, 0);
   });
 

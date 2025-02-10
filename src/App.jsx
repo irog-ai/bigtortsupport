@@ -7,7 +7,8 @@ import Details from "./components/Details";
 import Footer from "./components/Footer";
 import Terms from "./components/Terms";
 import PrivacyPolicy from "./components/PrivacyPolicy";
-
+import LawFirmGetStarted from "./components/LawFirmGetStarted"
+import Pricing from"./components/Pricing";
 
 function App() {
   return (
@@ -19,6 +20,8 @@ function App() {
           <Route path="/Details" element={<Details />} />
           <Route path="/Terms" element={<Terms />} />
           <Route path="/PrivacyPolicy" element={<PrivacyPolicy />} />
+          <Route path="/GetStarted" element={<LawFirmGetStarted />} />
+          <Route path="/Pricing" element={<Pricing />} />
         </Route>
       </Routes>      
     

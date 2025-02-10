@@ -29,7 +29,7 @@ const Home = () => {
         <div id="hero--inner-container" className="max-1040">
           <div id="hero--text">
             <h1 id="hero--text--header">Helping Law Firms With Mass Tort</h1>
-            <p id="hero-cta"><a><span>Get started</span></a></p>
+            
           </div>
         </div>
       </section>
@@ -106,7 +106,7 @@ const Home = () => {
             <h2>Seamless AI-Driven Integration</h2>
             <p>All data collected &mdash; whether via SMS, web-based portal, or AI-assisted document gathering &mdash; can be pushed directly into your preferred case management software (Filevine, Clio, Salesforce, etc.). If an API connection is not yet available, we will develop one at no additional charge.</p>
             <p>At BigTortSupport.ai, we use AI to simplify, automate, and enhance mass tort case management, allowing your firm to focus on legal strategy while ensuring no client is left behind.</p>
-            <p>Let us handle the operational burden &mdash; <a href="/login" onClick={(e) => handleButtonClick(e, "/Login")} className="inline-cta">Get started today</a></p>
+            <p>Let us handle the operational burden &mdash; <a href="/login" onClick={(e) => handleButtonClick(e, "/GetStarted")} className="inline-cta">Get started today</a></p>
           </div>
         </div>
       </section>

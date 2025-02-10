@@ -69,8 +69,8 @@ const Banner = () => {
           <a onClick={(e) => handleButtonClick(e, "/")} id="page-header--logo"><img src={logo} /></a>
           <nav id="page-header--nav">
             <ul id="page-header--nav-desktop">
-              <li><a href="/login" onClick={(e) => handleButtonClick(e, "/Login")}><span>Log In</span></a></li>
-              <li id="page-header--cta"><a onClick={(e) => handleButtonClick(e, "/Login")}><span>Get started</span></a></li>
+              {/* <li><a href="/login" onClick={(e) => handleButtonClick(e, "/Login")}><span>Log In</span></a></li> */}
+              <li id="page-header--cta"><a onClick={(e) => handleButtonClick(e, "/GetStarted")}><span>Get Started</span></a></li>
               {/*<li id="page-header--logged-in" onClick={toggleDropdown}>
                 <span><div className="profile-circle"></div><span id="page-header--user-name">Firstname Lastname</span></span>
                 <div id="page-header--account-dropdown">
