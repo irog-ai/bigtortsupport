@@ -14,10 +14,14 @@
     "@emotion/styled": "^11.14.0",
     "@mui/icons-material": "^6.4.2",
     "@mui/material": "^6.4.2",
-    "aws-amplify": "^6.12.2",
+    "aws-amplify": "^5.3.12",
+    "aws-sdk": "^2.1692.0",
+    "axios": "^1.7.9",
+    "loglevel": "^1.9.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-router-dom": "^7.1.5"
+    "react-router-dom": "^7.1.5",
+    "ua-parser-js": "^2.0.2"
   },
   "devDependencies": {
     "@aws-amplify/backend": "^1.14.0",

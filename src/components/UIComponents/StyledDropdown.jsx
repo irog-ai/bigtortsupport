@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, TextField, Typography, MenuItem } from "@mui/material";
 
-const StyledDropdown = ({ label, name, value, onChange, options }) => {
+const StyledDropdown = ({ label, name, value, onChange, options, disabled }) => {
   return (
     <Box sx={{ marginBottom: '15px', textAlign: 'left' }}>
       <Typography
@@ -17,6 +17,7 @@ const StyledDropdown = ({ label, name, value, onChange, options }) => {
         name={name}
         value={value}
         onChange={onChange}
+        disabled={disabled}
         sx={{
           '& .MuiOutlinedInput-root': {
             height: '40px', // Set a smaller fixed height similar to text fields

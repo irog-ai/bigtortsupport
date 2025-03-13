@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-bigtortsupport-dev-c423b-authRole",
+      "UnauthRoleArn": "arn:aws:iam::471112882851:role/amplify-bigtortsupport-dev-c423b-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::471112882851:role/amplify-bigtortsupport-dev-c423b-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-bigtortsupport-dev-c423b-deployment",
+      "UnauthRoleName": "amplify-bigtortsupport-dev-c423b-unauthRole",
+      "StackName": "amplify-bigtortsupport-dev-c423b",
+      "StackId": "arn:aws:cloudformation:us-east-2:471112882851:stack/amplify-bigtortsupport-dev-c423b/4d480ad0-e905-11ef-8cef-0ad1643e160d",
+      "AmplifyAppId": "d3pf9lejgipu4i"
+    },
+    "categories": {
+      "auth": {
+        "bigtortsupport73846df9": {}
+      }
+    }
+  }
+}
