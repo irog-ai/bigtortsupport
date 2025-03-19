@@ -201,7 +201,13 @@ const Details = () => {
     if ((section === "email" || section === "phone") && !canUpdate()) {
       setMessageBoxTitle("Update Restriction");
       setMessageBoxMessage(
-        "You cannot update your phone number or email address within 30 days of the last update. Please contact your firm if necessary."
+        `You recently updated your ${state.userDetails.recentPhoneChange ? "phone number" : "email address"}. 
+        You cannot update your phone number or email address within ${
+          import.meta.env.VITE_CHANGE_DETECTION_MINUTES < 24*60
+            ? `${import.meta.env.VITE_CHANGE_DETECTION_MINUTES} minutes`
+            : `${Math.ceil(import.meta.env.VITE_CHANGE_DETECTION_MINUTES / (24 * 60))} days`
+        }
+        days of the last update. Please contact your firm if necessary.`
       );
       setMessageBoxOpen(true);
       return;
