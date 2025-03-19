@@ -10,6 +10,8 @@ const InactiveSession = () => {
     // Clear session storage on component mount
     sessionStorage.removeItem("jwtToken");
     sessionStorage.removeItem("TransactionId");
+    sessionStorage.removeItem("userId");
+    sessionStorage.removeItem("campaignImage");
     document.title = "Session Expired - Bigtortsupport.ai";
   }, []);
 

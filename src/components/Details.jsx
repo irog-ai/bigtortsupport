@@ -28,9 +28,9 @@ const Details = () => {
   //const apipath = process.env.REACT_APP_API_PATH;
   const navigate = useNavigate();
   const location = useLocation();
-  const userId = location.state?.userId;
+  const userId = sessionStorage.getItem("userId");
   //const campaignImage = location.state?.campaignImage;
-  //console.log(userId);
+  console.log(userId);
 
   const [state, setState] = useState({
     userDetails: {
@@ -731,6 +731,7 @@ const Details = () => {
         setMessageBoxTitle("Success");
         setMessageBoxMessage("Information updated successfully");
         setMessageBoxOpen(true);
+        fetchUserData(userId);
         setState((prevState) => ({
           ...prevState,
           emailVerificationMessage: "",

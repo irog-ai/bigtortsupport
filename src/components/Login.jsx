@@ -87,8 +87,10 @@ const Login = () => {
 
   useEffect(() => {
     document.title = "Login - Bigtortsupport.ai";
-    sessionStorage.removeItem("jwtToken");
+    sessionStorage.removeItem("jwtToken");  
     sessionStorage.removeItem("TransactionId");
+    sessionStorage.removeItem("userId");
+    sessionStorage.removeItem("campaignImage");
     console.log(sessionStorage.getItem("jwtToken"));
 
     const validateCampaign = async () => {
@@ -255,9 +257,9 @@ const Login = () => {
       if (otpResponse.data.status) {
         sessionStorage.setItem("jwtToken", otpResponse.data.token);
         log.info(`Redirecting to Details page for litigant id: ${state.loginLitigantId}`);
-        navigate("/Details", {
-          state: { userId: otpResponse.data.userDetails.id, campaignImage: campaignDetails.CampaignImageUrl },
-        });
+        sessionStorage.setItem("userId", otpResponse.data.userDetails.id);
+        sessionStorage.setItem("campaignImage", campaignDetails.CampaignImageUrl);
+        navigate("/Details");
       } else {
         // Check if this is the last attempt
         if (state.otpAttempts + 1 >= 3) {
