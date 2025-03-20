@@ -108,7 +108,11 @@ const Details = () => {
 
   useEffect(() => {
     document.title = "Details - Bigtortsupport.ai";
-    fetchUserData(userId);
+    if(userId){
+      fetchUserData(userId);
+    } else {
+      navigate("/");
+    }
     /*...userDetailsJson,
     socialMediaHandles: userDetailsJson?.socialMediaHandles || [],
     currentHandle: "",*/
