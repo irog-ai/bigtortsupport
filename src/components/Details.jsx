@@ -143,6 +143,15 @@ const Details = () => {
         )} for litigant id: ${userId}`
       );
       if (
+        response.litigantAddress[0].SmsConsent === false ||
+        response.litigantAddress[0].SmsConsent === null
+      ) {
+        response.litigantAddress[0] = {
+          ...response.litigantAddress[0],
+          SmsConsent: true,
+        };
+      }
+      if (
         !response.litigantAddress[0].SocialMediaHandles ||
         response.litigantAddress[0].SocialMediaHandles.length === 0
       ) {
@@ -201,11 +210,15 @@ const Details = () => {
     if ((section === "email" || section === "phone") && !canUpdate()) {
       setMessageBoxTitle("Update Restriction");
       setMessageBoxMessage(
-        `You recently updated your ${state.userDetails.recentPhoneChange ? "phone number" : "email address"}. 
+        `You recently updated your ${
+          state.userDetails.recentPhoneChange ? "phone number" : "email address"
+        }. 
         You cannot update your phone number or email address within ${
-          import.meta.env.VITE_CHANGE_DETECTION_MINUTES < 24*60
+          import.meta.env.VITE_CHANGE_DETECTION_MINUTES < 24 * 60
             ? `${import.meta.env.VITE_CHANGE_DETECTION_MINUTES} minutes`
-            : `${Math.ceil(import.meta.env.VITE_CHANGE_DETECTION_MINUTES / (24 * 60))} days`
+            : `${Math.ceil(
+                import.meta.env.VITE_CHANGE_DETECTION_MINUTES / (24 * 60)
+              )} days`
         }
         days of the last update. Please contact your firm if necessary.`
       );
@@ -728,17 +741,7 @@ const Details = () => {
         )} input details: ${JSON.stringify(updateDetails)}`
       );
       if (response.success) {
-        setMessageBoxTitle("Success");
-        setMessageBoxMessage("Information updated successfully");
-        setMessageBoxOpen(true);
-        fetchUserData(userId);
-        setState((prevState) => ({
-          ...prevState,
-          emailVerificationMessage: "",
-          smsVerificationMessage: "",
-          isLoading: false,
-          updatingSection: null,
-        }));
+        navigate("/SaveSignout");
       } else {
         setMessageBoxTitle("Error");
         setMessageBoxMessage("Failed to update information. Please try again.");
@@ -1075,7 +1078,6 @@ const Details = () => {
       )}
 
       {/* Add campaign image at the top of the personal information section */}
-      
 
       {/* SMS Consent Section */}
       <Paper sx={{ mb: 4, p: 3 }} elevation={3}>
@@ -1303,7 +1305,7 @@ const Details = () => {
       <Paper sx={{ mb: 4 }} elevation={3}>
         <Box sx={{ p: 3 }}>
           <Typography variant="h6" sx={{ fontWeight: "bold" }} gutterBottom>
-            Add Emergency Contact & Social Media
+            Add Emergency Contact
           </Typography>
           <Typography variant="body1" sx={{ mb: 2 }}>
             If we are unable to reach you by phone or email, please provide
@@ -1362,7 +1364,11 @@ const Details = () => {
                 helperText={errors.EmergencyContactEmail}
               />
             </Grid>
+
             <Grid size={12}>
+              <Typography variant="h6" sx={{ fontWeight: "bold" }} gutterBottom>
+                Add Social Media Contact
+              </Typography>
               <Typography
                 variant="body2"
                 sx={{ mb: 2, fontStyle: "italic", color: "gray" }}
@@ -1382,7 +1388,7 @@ const Details = () => {
                         !state.userDetails.litigantAddress[0]?.SmsConsent
                       }
                       value={handle.handle}
-                      onChange={(e) => {                        
+                      onChange={(e) => {
                         setState((prevState) => {
                           let newHandles =
                             prevState.userDetails.litigantAddress[0]
@@ -1390,15 +1396,15 @@ const Details = () => {
 
                           newHandles[index].handle = e.target.value;
                           let isFormValid = true;
-                        // Parse the JSON string if necessary
-                        if (e.target.value === "None") {
-                          newHandles[index].link = "";
-                          isFormValid = true;
-                          setErrors((prevErrors) => ({
-                            ...prevErrors,
-                            [`SocialMediaHandlesProfileLink_${index}`]: "",
-                          }));
-                        }
+                          // Parse the JSON string if necessary
+                          if (e.target.value === "None") {
+                            newHandles[index].link = "";
+                            isFormValid = true;
+                            setErrors((prevErrors) => ({
+                              ...prevErrors,
+                              [`SocialMediaHandlesProfileLink_${index}`]: "",
+                            }));
+                          }
                           return {
                             ...prevState,
                             isFormValid: isFormValid,

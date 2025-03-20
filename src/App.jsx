@@ -11,6 +11,7 @@ import LawFirmGetStarted from "./components/LawFirmGetStarted";
 import Pricing from "./components/Pricing";
 import Signout from "./components/Signout";
 import InactiveSession from "./components/InactiveSession";
+import SaveSignout from "./components/SaveSignout";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path="/Details" element={<Details />} />
           <Route path="/Logout" element={<Signout />} />
           <Route path="/InactiveSession" element={<InactiveSession />} />
+          <Route path="/SaveSignout" element={<SaveSignout />} />
         </Route>
       </Routes>
     </div>
