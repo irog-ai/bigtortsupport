@@ -205,8 +205,8 @@ const Login = () => {
     switch (name) {
       case "lastName":
         if (!value) return "Last Name is required";
-        if (!/^[A-Za-z]+$/.test(value))
-          return "Last Name should only contain alphabets";
+        if (!/^[A-Za-z\s-]+$/.test(value))
+          return "Last Name should only contain letters, spaces and hyphens";
         return "";
       case "phoneDigits":
         if (!value) return "Phone Number is required";
